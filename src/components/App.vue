@@ -12,7 +12,9 @@
     <label>
       <input type="checkbox" v-model="newItemPriority" /> High Priority
     </label>
-    <button class="btn btn-primary">Save item</button>
+    <button class="btn btn-primary" :disabled="newItem.length < 5">
+      Save item
+    </button>
   </form>
   <ul>
     <li v-for="({ id, name }, index) in items" :key="id">{{ name }}</li>
